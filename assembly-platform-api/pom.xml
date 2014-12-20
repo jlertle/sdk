@@ -92,7 +92,7 @@
             <artifactId>codenvy-infrastructure-local</artifactId>
             <version>${codenvy.platform-api.version}</version>
         </dependency>
-        <dependency>
+        <!--dependency>
             <groupId>com.codenvy.plugin-angularjs</groupId>
             <artifactId>angularjs-api-server</artifactId>
             <version>${codenvy.plugin.angularjs.version}</version>
@@ -146,7 +146,7 @@
             <groupId>com.codenvy.plugin-gulp</groupId>
             <artifactId>gulp-runner</artifactId>
             <version>${codenvy.plugin.gulp.version}</version>
-        </dependency>
+        </dependency-->
         <dependency>
             <groupId>com.codenvy.plugin-java</groupId>
             <artifactId>codenvy-builder-ant</artifactId>
@@ -193,7 +193,7 @@
             <artifactId>codenvy-runner-webapps</artifactId>
             <version>${codenvy.plugin-java.version}</version>
         </dependency>
-        <dependency>
+        <!--dependency>
             <groupId>com.codenvy.plugin-npm</groupId>
             <artifactId>npm-builder</artifactId>
             <version>${codenvy.plugin.npm.version}</version>
@@ -217,13 +217,13 @@
             <groupId>com.codenvy.plugin-sdk</groupId>
             <artifactId>codenvy-ext-plugins</artifactId>
             <version>${codenvy.plugin-sdk.version}</version>
-        </dependency>
+        </dependency-->
         <dependency>
             <groupId>com.codenvy.plugin-sdk</groupId>
             <artifactId>codenvy-ide-env-dummy</artifactId>
             <version>${codenvy.plugin-sdk.version}</version>
         </dependency>
-        <dependency>
+        <!--dependency>
             <groupId>com.codenvy.plugin-sdk</groupId>
             <artifactId>codenvy-runner-sdk</artifactId>
             <version>${codenvy.plugin-sdk.version}</version>
@@ -232,7 +232,7 @@
             <groupId>com.codenvy.plugin-yeoman</groupId>
             <artifactId>yeoman-builder</artifactId>
             <version>${codenvy.plugin.yeoman.version}</version>
-        </dependency>
+        </dependency-->
         <dependency>
             <groupId>com.codenvy.security</groupId>
             <artifactId>codenvy-security-oauth2</artifactId>
