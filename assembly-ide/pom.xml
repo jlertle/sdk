@@ -48,11 +48,6 @@
         </dependency>
         <dependency>
             <groupId>com.codenvy.ide</groupId>
-            <artifactId>codenvy-ext-runner</artifactId>
-            <version>${codenvy.ide.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codenvy.ide</groupId>
             <artifactId>codenvy-ext-web</artifactId>
             <version>${codenvy.ide.version}</version>
         </dependency>
@@ -217,11 +212,10 @@
             <artifactId>codenvy-ext-ruby</artifactId>
             <version>${codenvy.plugin-ruby.version}</version>
         </dependency>
-        <!--TODO need take out version-->
         <dependency>
             <groupId>com.codenvy.plugin-runner</groupId>
             <artifactId>codenvy-plugin-runner</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${codenvy.plugin.runner.version}</version>
         </dependency>
         <dependency>
             <groupId>com.codenvy.plugin-sdk</groupId>
