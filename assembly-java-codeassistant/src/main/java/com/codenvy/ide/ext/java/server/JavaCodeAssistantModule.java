@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012-2014 Codenvy, S.A.
+ * Copyright (c) 2012-2015 Codenvy, S.A.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,8 @@ package com.codenvy.ide.ext.java.server;
 
 import com.codenvy.everrest.CodenvyAsynchronousJobPool;
 import com.codenvy.inject.DynaModule;
+import com.codenvy.vfs.impl.fs.LocalFSMountStrategy;
+import com.codenvy.vfs.impl.fs.WorkspaceHashLocalFSMountStrategy;
 import com.google.inject.AbstractModule;
 
 import org.everrest.core.impl.async.AsynchronousJobPool;
@@ -26,6 +28,7 @@ public class JavaCodeAssistantModule extends AbstractModule {
     @Override
     protected void configure() {
         bind(RestNameEnvironment.class);
+        bind(LocalFSMountStrategy.class).to(WorkspaceHashLocalFSMountStrategy.class);
         bind(JavadocService.class);
         bind(JavaNavigationService.class);
         bind(JavaProjectWatcherService.class);

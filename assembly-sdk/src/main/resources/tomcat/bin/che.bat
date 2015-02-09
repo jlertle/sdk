@@ -1,3 +1,14 @@
+@REM
+@REM Copyright (c) 2012-2015 Codenvy, S.A.
+@REM All rights reserved. This program and the accompanying materials
+@REM are made available under the terms of the Eclipse Public License v1.0
+@REM which accompanies this distribution, and is available at
+@REM http://www.eclipse.org/legal/epl-v10.html
+@REM
+@REM Contributors:
+@REM   Codenvy, S.A. - initial API and implementation
+@REM
+
 @echo off
 rem Licensed to the Apache Software Foundation (ASF) under one or more
 rem contributor license agreements.  See the NOTICE file distributed with
@@ -115,13 +126,13 @@ rem Guess CATALINA_HOME if not defined
 set "CURRENT_DIR=%cd%"
 if not "%CATALINA_HOME%" == "" goto gotHome
 set "CATALINA_HOME=%CURRENT_DIR%"
-if exist "%CATALINA_HOME%\bin\codenvy.bat" goto okHome
+if exist "%CATALINA_HOME%\bin\che.bat" goto okHome
 cd ..
 set "CATALINA_HOME=%cd%"
 cd "%CURRENT_DIR%"
 :gotHome
 
-if exist "%CATALINA_HOME%\bin\codenvy.bat" goto okHome
+if exist "%CATALINA_HOME%\bin\che.bat" goto okHome
 echo The CATALINA_HOME environment variable is not defined correctly
 echo This environment variable is needed to run this program
 goto end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2012-2014 Codenvy, S.A.
+    Copyright (c) 2012-2015 Codenvy, S.A.
     All rights reserved. This program and the accompanying materials
     are made available under the terms of the Eclipse Public License v1.0
     which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@
     <parent>
         <artifactId>codenvy-sdk-parent</artifactId>
         <groupId>com.codenvy.sdk</groupId>
-        <version>3.5.0-SNAPSHOT</version>
+        <version>3.7.0-SNAPSHOT</version>
     </parent>
     <artifactId>assembly-sdk</artifactId>
     <packaging>pom</packaging>
@@ -457,11 +457,14 @@
                                     </patternset>
                                 </unzip>
                                 <move file="${project.build.directory}/apache-tomcat-${org.apache.tomcat.version}" tofile="${project.build.directory}/tomcat-ide" />
+                                <copy overwrite="true" todir="${project.build.directory}/tomcat-ide/tomcat">
+                                    <fileset dir="${project.build.directory}/tomcat-ide" />
+                                </copy>
                                 <copy overwrite="true" todir="${project.build.directory}/tomcat-ide">
                                     <fileset dir="${basedir}/src/main/resources/tomcat" />
                                 </copy>
                                 <chmod dir="${project.build.directory}/tomcat-ide/bin" includes="**/*.sh" perm="+x" />
-                                <move file="${project.build.directory}/tomcat-ide/bin/catalina.sh" tofile="${project.build.directory}/tomcat-ide/bin/codenvy.sh" />
+                                <move file="${project.build.directory}/tomcat-ide/bin/catalina.sh" tofile="${project.build.directory}/tomcat-ide/bin/che.sh" />
                                 <delete file="${project.build.directory}/tomcat-ide/bin/catalina.bat" />
                                 <!-- Copy resources to re-build Codenvy IDE with 3rd-party extensions. -->
                                 <copy overwrite="true" todir="${project.build.directory}/tomcat-ide/sdk-resources">

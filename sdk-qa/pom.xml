@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2012-2014 Codenvy, S.A.
+    Copyright (c) 2012-2015 Codenvy, S.A.
     All rights reserved. This program and the accompanying materials
     are made available under the terms of the Eclipse Public License v1.0
     which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@
     <parent>
         <artifactId>codenvy-sdk-parent</artifactId>
         <groupId>com.codenvy.sdk</groupId>
-        <version>3.5.0-SNAPSHOT</version>
+        <version>3.7.0-SNAPSHOT</version>
     </parent>
     <artifactId>sdk-qa</artifactId>
     <name>Codenvy SDK :: QA</name>
@@ -43,7 +43,13 @@
         <dependency>
             <groupId>com.googlecode.grep4j</groupId>
             <artifactId>grep4j</artifactId>
-            <version>1.8.7</version>
+            <version>${com.googlecode.grep4j.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>lombok</artifactId>
+                    <groupId>org.projectlombok</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -65,6 +71,12 @@
             <groupId>org.jboss.arquillian.extension</groupId>
             <artifactId>arquillian-phantom-driver</artifactId>
             <version>${org.jboss.arquillian.version}</version>
+        </dependency>
+        <dependency>
+            <!-- Use JDK8 compliant -->
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.lombok.version}</version>
         </dependency>
     </dependencies>
     <build>
@@ -148,12 +160,12 @@
                                 <configuration>
                                     <target>
                                         <replace file="${codenvy.ide.path}/bin/setenv.sh" token="8080" value="8280" />
-                                        <replace file="${codenvy.ide.path}/bin/codenvy.sh" token="CATALINA_PID" value="CODENVY_PID" />
+                                        <replace file="${codenvy.ide.path}/bin/che.sh" token="CATALINA_PID" value="CODENVY_PID" />
                                         <replace file="${codenvy.ide.path}/conf/server.xml" token="8080" value="8280" />
                                         <replace file="${codenvy.ide.path}/conf/server.xml" token="8009" value="8209" />
                                         <replace file="${codenvy.ide.path}/conf/server.xml" token="8005" value="8205" />
                                         <exec executable="sh" spawn="false">
-                                            <arg value="${codenvy.ide.path}/bin/codenvy.sh" />
+                                            <arg value="${codenvy.ide.path}/bin/che.sh" />
                                             <arg value="start" />
                                         </exec>
                                     </target>
@@ -168,10 +180,10 @@
                                 <configuration>
                                     <target>
                                         <exec executable="sh" spawn="false">
-                                            <arg value="${codenvy.ide.path}/bin/codenvy.sh" />
+                                            <arg value="${codenvy.ide.path}/bin/che.sh" />
                                             <arg value="stop" />
                                         </exec>
-                                        <replace file="${codenvy.ide.path}/bin/codenvy.sh" token="CODENVY_PID" value="CATALINA_PID" />
+                                        <replace file="${codenvy.ide.path}/bin/che.sh" token="CODENVY_PID" value="CATALINA_PID" />
                                         <replace file="${codenvy.ide.path}/bin/setenv.sh" token="8280" value="8080" />
                                         <replace file="${codenvy.ide.path}/conf/server.xml" token="8280" value="8080" />
                                         <replace file="${codenvy.ide.path}/conf/server.xml" token="8209" value="8009" />

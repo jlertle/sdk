@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2012-2014 Codenvy, S.A.
+ * Copyright (c) 2012-2015 Codenvy, S.A.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ import com.codenvy.api.user.server.UserProfileService;
 import com.codenvy.api.user.server.UserService;
 import com.codenvy.api.workspace.server.WorkspaceService;
 import com.codenvy.everrest.CodenvyAsynchronousJobPool;
+import com.codenvy.everrest.ETagResponseFilter;
 import com.codenvy.ide.ext.java.jdi.server.DebuggerService;
 import com.codenvy.ide.ext.java.server.format.FormatService;
 import com.codenvy.ide.ext.ssh.server.KeyService;
@@ -54,6 +55,8 @@ public class ApiModule extends AbstractModule {
 
         bind(AuthenticationService.class);
         bind(WorkspaceService.class);
+        bind(ETagResponseFilter.class);
+
         bind(UserService.class);
         bind(UserProfileService.class);
 

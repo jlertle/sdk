@@ -1,5 +1,3 @@
-![image] (http://cenext.wpengine.com/wp-content/uploads/2014/07/cdec-slide-1.png)
-
 Eclipse Che (formerly the Codenvy SDK) is a free and open Java framework for building Web client applications that are beautiful, fast, and modular. Che creates cross-browser applications by combining extensions into a single compiled and optimized application. Extensions are provided by Che and authored by you as Java classes that use GWT libraries. Your extensions are compiled with Che and translated to JavaScript with support for most modern browsers.
 
 Che contains:
@@ -13,9 +11,12 @@ Che contains:
 * An Eclipse plug-in for editing, building and running Che projects from within Eclipse
 * Developer tooling for building and packaging plug-ins
 
+![Eclipse Che](http://docs.codenvy-stg.com/wp-content/uploads/eclipse-che.png "Eclipse Che")
+
+
 The IDE is a browser application that has a extensions packaged into it. Extensions make use of the platform APIs and run on the Eclipse Che kernel. The kernel is a servlet-based framework that loads and manages extensions.  The kernel can be run in any servlet container. Tomcat bundling is provided within Che. Tomcat is also included to make startup configuration simpler. 
 
-Che can be installed on any operating system that supports Java 1.7 - desktop, server or cloud. It has been tested on Ubuntu, Linux, MacOS and Windows. Java, GWT, GIN and Javascript are the core technologies used to build Che. Che currently has Runner issues on Windows. You will be able to build extensions and launch the IDE, but you will not be able to launch projects into a Runner due to way Java on Windows forks processes.
+Che can be installed on any operating system that supports Java 1.7 - desktop, server or cloud. It has been tested on Ubuntu, Linux, MacOS and Windows. Java, GWT, GIN and Javascript are the core technologies used to build Che.
 
 ### License
 Che is open sourced under the Eclipse Public License 1.0.
@@ -25,16 +26,18 @@ Che is open sourced under the Eclipse Public License 1.0.
 ```sh
 git clone https://github.com/codenvy/sdk.git
 cd sdk
-git checkout 3.2.0
+git checkout 3.6.0
 ```
 
 We advise against building the master branch as you may encounter intermediate errors. 
+
+This builds just the SDK.  If you want to build Che and all of its dependent repositories together into an all-in-one assembly, instructions to do so are at [github.com/codenvy/assembly-che] (https://github.com/codenvy/assembly-che).
 
 ### Build and Run Che
 ```sh
 cd /sdk
 mvn clean install
-./codenvy_sdk [ start | stop ]
+./che [ start | stop ]
 ```
 
 Che will be available at ```localhost:8080```
