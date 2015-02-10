@@ -217,11 +217,11 @@
             <artifactId>codenvy-ext-ruby</artifactId>
             <version>${codenvy.plugin-ruby.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.codenvy.plugin-sdk</groupId>-->
-            <!--<artifactId>codenvy-ext-plugins</artifactId>-->
-            <!--<version>${codenvy.plugin-sdk.version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.codenvy.plugin-sdk</groupId>
+            <artifactId>codenvy-ext-plugins</artifactId>
+            <version>${codenvy.plugin-sdk.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.codenvy.plugin-sdk</groupId>
             <artifactId>codenvy-ide-env-dummy</artifactId>
